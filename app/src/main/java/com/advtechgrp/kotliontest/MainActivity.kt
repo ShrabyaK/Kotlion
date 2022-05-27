@@ -25,6 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -106,6 +107,20 @@ fun AppMainScreen() {
 @Composable
 fun NavDrawer(){
     Column {
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
+            Image(
+                painter = painterResource(R.mipmap.ic_launcher_foreground),
+                contentDescription = "App icon"
+            )
+            Text(
+                text = "Corrlinks",
+                style  = TextStyle(fontWeight = FontWeight.W900, fontSize = 30.sp, letterSpacing = 3.sp)
+            )
+        }
         Divider(color = Color.Black)
         Spacer(modifier = Modifier.height(10.dp))
         NavDrawerContent(title = "Inbox")
@@ -452,6 +467,6 @@ fun DefaultPreview() {
 @Composable
 fun DefaultPreview1() {
     KotlionTestTheme {
-        //CustomNavigationBar()
+        NavDrawer()
     }
 }
